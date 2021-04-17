@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <!--Event on Magento Checkout-->
+    <event name="checkout_submit_all_after">
+        <observer name="log_text" instance="Learn\BigBoats\Observer\LogAtCheckout" />
+    </event>
+
+    <!--Custom Event-->
+    <event name="custom_say_event">
+        <observer name="say" instance="Learn\BigBoats\Observer\CustomObserverSay"/>
+    </event>
+
+    <!--ChangeDisplayText-->
+    <event name="mageplaza_helloworld_display_text">
+        <observer name="mp_display_text" instance="Learn\BigBoats\Observer\ChangeDisplayText" />
+    </event>
+
+    <!--logger-->
+    <event name="customer_login">
+        <observer name="learn_bigboats_customer_login" instance="Learn\BigBoats\Observer\CustomerLoginSuccess" />
+    </event>
+</config>

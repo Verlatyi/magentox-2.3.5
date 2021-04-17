@@ -1,0 +1,28 @@
+<table>
+    <tr>
+        <th class="note-id">Id</th>
+        <th class="note-name">Name</th>
+        <th>Status</th>
+    </tr>
+
+    <?php
+    /**
+     * @var Display $block
+     */
+
+    use FabricList\Notes\Block\Display;
+
+    echo $block->sayPage();
+    echo "<br>";
+    echo __('Brain');
+
+    foreach ($block->getNoteCollection() as $key=>$note) {
+        echo '<tr>
+                    <td>' . $note->getNote_id() . '</td>
+                    <td>' . $note->getLabel() . '</td>
+                    <td>' . $note->getStatus() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+

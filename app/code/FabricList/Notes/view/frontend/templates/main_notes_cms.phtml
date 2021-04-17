@@ -1,0 +1,34 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+
+echo __('Most Viewed Products');
+echo '<br>';
+echo __('ваш текст');
+echo '<br>';
+echo __('Most');
+echo '<br>';
+if($this->hasData('path')) {
+    var_export($this->getData('path'));
+}
+else {
+    echo "Has not argument with name = path";
+}
+
+if($customerSession->isLoggedIn()) {
+?>
+    <div class="information">
+        <h1><?php echo __("Для управления заметками")?> -><a href="http://magentox/notes/"><?php echo __("Мои Заметки")?></a></h1>
+    </div>
+<?php
+}
+else {
+    ?>
+    <div class="information">
+        <h1><?php echo __("Для управления заметками, Вам нужно Авторизироваться в системе")?>-><a href="http://magentox/customer/account/login/referer/aHR0cDovL21hZ2VudG94L2N1c3RvbWVyL2FjY291bnQvY3JlYXRlLw/"><?php echo __("Aвторизация")?></a></h1>
+    </div>
+    <?php
+}
+
+
+?>

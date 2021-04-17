@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd" >
+    <!--CLI custom command-->
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="learn_say_hello" xsi:type="object">Learn\BigBoats\Console\Command\SayHello</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Default setting-->
+    <preference for="Learn\BigBoats\Api\BoatInterface"
+                type="Learn\BigBoats\Model\Boats\Boat" />
+
+    <!--Default setting-->
+    <preference for="Learn\BigBoats\Api\Color"
+                type="Learn\BigBoats\Model\Colors\Black" />
+
+    <!--Override model on model-->
+    <preference for="Learn\BigBoats\Model\Colors\Black"
+                type="Learn\BigBoats\Model\Colors\White"/>
+
+    <!--Default setting-->
+    <preference for="Learn\BigBoats\Api\Type"
+                type="Learn\BigBoats\Model\Types\Big" />
+
+    <!--Default setting-->
+    <preference for="Learn\BigBoats\Api\Covering"
+                type="Learn\BigBoats\Model\Coverings\Standard"/>
+
+    <!--delegating default values-->
+    <type name="Learn\BigBoats\Model\Boats\Boat">
+        <arguments>
+            <argument name="color" xsi:type="object">BlackMatt</argument>
+            <argument name="type" xsi:type="object">Learn\BigBoats\Model\Types\Fisher</argument>
+        </arguments>
+    </type>
+
+    <!--Argument Types (String & Number & Array)-->
+    <type name="Learn\BigBoats\Model\Instructors\Instructor">
+        <arguments>
+            <argument name="firstName" xsi:type="string">Egor</argument>
+            <argument name="experience" xsi:type="number">2</argument>
+            <argument name="lastName" xsi:type="string">Filipchenko</argument>
+            <argument name="certificate" xsi:type="array">
+                <item name="swiming" xsi:type="number">3</item>
+                <item name="rescue" xsi:type="number">1</item>
+                <item name="medicine" xsi:type="number">1</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!--Virtual Types-->
+    <virtualType name="BlackMatt" type="Learn\BigBoats\Model\Colors\Black" shared="false">
+        <arguments>
+            <argument name="covering" xsi:type="object" shared="false">Learn\BigBoats\Model\Coverings\Matt</argument>
+        </arguments>
+    </virtualType>
+
+    <!--Plugins Interactive Color-->
+    <type name="Learn\Interactive\Model\Color">
+        <plugin name="before_set_color"
+                type="Learn\BigBoats\Plugin\FirstPlugin"
+                sortOrder="20"
+                disabled="true"/>
+    </type>
+
+    <!--Plugins Magento Product-->
+    <!--<type name="Magento\Catalog\Model\Product">
+        <plugin name="products_plugins_baa"
+                type="Learn\BigBoats\Plugin\ProductPlugin"
+                sortOrder="10"/>
+    </type>-->
+
+    <!--Plugins My Module on Execute-->
+    <type name="Learn\BigBoats\Controller\Index\Index">
+        <plugin name="big_boats_on_execute_plugins"
+                type="Learn\BigBoats\Plugin\FirstPlugin"
+                sortOrder="10"
+                disabled="false"/>
+        <plugin name="big_boats_on_execute_second_plugin"
+                type="Learn\BigBoats\Plugin\SecondPlugin"
+                sortOrder="20"
+                disabled="false"/>
+        <plugin name="big_boats_on_execute_second_thirt"
+                type="Learn\BigBoats\Plugin\ThirtPlugin"
+                sortOrder="5"
+                disabled="false"/>
+        <!--Proxy ON-->
+        <arguments>
+            <argument name="proxyService" xsi:type="object">Learn\BigBoats\Model\Proxy\Service\Proxy</argument>
+        </arguments>
+    </type>
+
+    <!--logger-->
+    <type name="Learn\BigBoats\Logger\Handler\Customer">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Learn\BigBoats\Logger\Customer">
+        <arguments>
+            <argument name="name" xsi:type="string">customer_logger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">Learn\BigBoats\Logger\Handler\Customer</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

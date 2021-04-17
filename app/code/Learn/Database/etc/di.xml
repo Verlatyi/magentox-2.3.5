@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd" >
+
+    <preference for="Learn\Database\Api\Data\LearnDatabaseInterface"
+                type="Learn\Database\Model\LearnDatabase"/>
+
+    <preference for="Learn\Database\Api\LearnDatabaseRepositoryInterface"
+                type="Learn\Database\Model\LearnDatabaseModelRepository"/>
+
+    <!--Search Criteria-->
+    <preference for="Learn\Database\Api\Data\LearnDatabaseSearchResultInterface"
+                type="Magento\Framework\Api\SearchResults"/>
+</config>

@@ -1,0 +1,30 @@
+<div class="title">Input color:</div>
+<div class="form-add-container">
+        <input type="number"
+               class="input-database"
+               id="input-database-id"
+               name="color"
+               data-bind="value: oid"
+               placeholder="Add id"/>
+        <div class="actions-toolbar">
+                <div class="primary">
+                        <button type="button"
+                                title="Add database"
+                                class="action save primary"
+                                id="add-new-btn-database-id"
+                                data-bind="click: addDatabase">
+                                <span>Add Database Id</span>
+                        </button>
+                </div>
+        </div>
+</div>
+
+<!-- ko if: ($data.databases) -->
+<h3>DATABASES LIST:</h3>
+<ul class="colors">
+        <p translate="databases().name"></p>
+    <!--<li repeat="foreach: databases, item: 'database'">
+        <span class="label" translate="database().id"></span>
+    </li>-->
+</ul>
+<!-- /ko -->

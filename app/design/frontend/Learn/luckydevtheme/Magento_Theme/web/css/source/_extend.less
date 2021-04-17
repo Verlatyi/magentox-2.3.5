@@ -1,0 +1,43 @@
+@import "_variables_luckytheme.less";
+@import "_custom_mixin.less";
+@button-primary__background: @color-black;
+
+//
+//      Desktop
+// -------------------
+& when (@media-common = true) {
+
+    .logo {
+        transform: scaleX(-1);
+        .custom_mixin(300px, 300px, 0.5);
+        //.lib-css(height, 200px);
+        //.lib-css(width, 300px);
+        .lib-css(border-radius, 20px);
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+
+    .page-title-wrapper {
+        color: #2A6002;
+    }
+
+    h1 {
+        color: #d04b0a;
+    }
+}
+
+//
+//      Mobile
+// -------------------
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .page-title-wrapper {
+        color: #0A246A;
+    }
+
+    h1 {
+        color: #6f4400;
+    }
+}
+

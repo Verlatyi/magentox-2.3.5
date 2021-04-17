@@ -1,0 +1,44 @@
+<?php
+    use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+
+$data = '<script>alert("Текст")</script>';
+$expected = 'http://example.com/search?term=this+&+that&amp;view=list<script>alert(1)</script>>';
+ echo $block->getUrl();
+ echo "<br>";
+echo $block->escapeUrl($block->getUrl('<script>console.log("asdasd")</script>'));
+
+
+
+?>
+
+<div data-bind="scope: 'todo'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
+        }
+    }
+</script>
+
+<a href="<?php echo '<script>alert("Текст")</script>'; ?>">Link</a>;
+<!--<script>
+    alert("Текст")
+</script>-->
+
+<div id='my-eleme'>
+    <?php echo 'Only registered users can write reviews. <script>alert("xss");</script>> Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>'?>
+    <?php echo 'Only registered users can write reviews. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>'?>
+</div>
+
+
+<div id='my-element'>
+    <?php echo $block->escapeHtml('Only registered users can write reviews. <script>alert("xss2");</script>> Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>')?>
+    <?php echo $block->escapeUrl('Only registered users can write reviews. <script>alert("xss2");</script>> Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>')?>
+</div>
+

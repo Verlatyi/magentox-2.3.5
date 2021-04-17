@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">MY LEARN DATABASE MODULE</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="notes.viewmodel" remove="true"/>
+        <referenceBlock name="learn.js.myjs" remove="true"/>
+        <referenceBlock name="lackytheme.text.default" remove="true"/>
+        <referenceBlock name="lackytheme.text2.default" remove="true"/>
+        <referenceBlock name="lackytheme.text3.default" remove="true"/>
+        <referenceBlock name="lackytheme.text4.default" remove="true"/>
+        <referenceBlock name="lackytheme.text5.default" remove="true"/>
+        <referenceBlock name="lackytheme.animation.default" remove="true"/>
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="learn.database.block"
+                   template="Learn_Database::database.phtml">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="database" xsi:type="array">
+                                <item name="component" xsi:type="string">Learn_Database/js/view/database</item>
+                                <item name="template" xsi:type="string">Learn_Database/database</item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

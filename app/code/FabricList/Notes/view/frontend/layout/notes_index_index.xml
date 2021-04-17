@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <head>
+        <css src="FabricList_Notes::style/notes.css" />
+<!--        <remove src="FabricList_Notes::style/notes.css"/>-->
+    </head>
+    <body>
+        <attribute name="class" value="note-body-class" />
+        <attribute name="style" value="background: #9daab7; opacity: 95%;" />
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_src" xsi:type="string">https://www.gifmania.ru/Animated-Gifs-Soobshcheniya/Animations-Memo/Memo-84523.gif</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">My Notes</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content" htmlTag="div" htmlClass="content-container" htmlId="IdContentContainer">
+            <block name="fabriclist.notes.uniq.block" template="FabricList_Notes::uniq_block.phtml">
+                <block name="notes.test.block1" as="testBlock1" template="FabricList_Notes::test_block_1.phtml" ></block>
+                <block name="notes.test.block2" as="testBlock2" template="FabricList_Notes::test_block_2.phtml"></block>
+                <block class="Magento\Framework\View\Element\Template" name="notes.test.block3" as="testBlock3" template="FabricList_Notes::test_block_3.phtml" ></block>
+                <block name="notes.test.block4" as="testBlock4" template="FabricList_Notes::test_block_4.phtml"></block>
+            </block>
+            <block class="FabricList\Notes\Block\Display" name="fabriclist.notes.block.list" template="FabricList_Notes::notes.phtml" />
+            <block class="Magento\Framework\View\Element\Text" name="fabriclist.notes.description">
+                <arguments>
+                    <argument name="text" xsi:type="string">1) Class Text -> Description </argument>
+                </arguments>
+            </block>
+            <block class="FabricList\Notes\Block\ViewText" name="fabriclist.notes.set.description">
+                <!--<action method="setText">
+                    <argument translate="true" name="text" xsi:type="string"> *ltscript /*gt </argument>
+                </action>-->
+                <action method="customSetText">
+                    <argument name="text" xsi:type="string"> {{trans "%body" body=$data.body}} </argument>
+                </action>
+            </block>
+            <block class="FabricList\Notes\Block\ViewText" name="fabriclist.notes.description.second">
+                <arguments>
+                    <argument name="text" xsi:type="string">3) My custom class -> Second Description </argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml">
+               <!-- <action method="setToolbarBlockName">
+                    <argument name="name" xsi:type="string">product_list_toolbar</argument>
+                </action>-->
+            </block>
+            <block class="FabricList\Notes\Block\WorkArgument" name="fabriclist.notes.block.work.argument" template="FabricList_Notes::work_argument.phtml">
+                <arguments>
+                    <argument name="text" xsi:type="string">Display 2</argument>
+                    <argument name="sort" xsi:type="number">1</argument>
+                    <argument name="items" xsi:type="array">
+                        <item name="item.first" xsi:type="string">first item</item>
+                        <item name="item.second" xsi:type="string">second item</item>
+                    </argument>
+                    <argument name="is.action" xsi:type="boolean">true</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+<!--        <move element="notes.test.block2" destination="content" before="-" />-->
+    </body>
+</page>

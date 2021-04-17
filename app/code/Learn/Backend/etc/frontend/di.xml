@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd" >
+
+    <preference for="Learn\Backend\Api\BoatInterface"
+                type="Learn\Backend\Model\Boat" />
+
+    <!--MODULE B-->
+    <preference for="Learn\BigBoats\Api\BoatInterface"
+                type="Learn\Backend\Model\Ship" />
+    <!--end-->
+    <preference for="Learn\Backend\Api\ColorInterface"
+                type="Learn\Backend\Model\BlackColor" />
+
+    <preference for="Learn\Backend\Api\TypeInterface"
+                type="Learn\Backend\Model\FamilyType" />
+
+    <preference for="Learn\Backend\Api\Brightness"
+                type="Learn\Backend\Model\Medium" />
+
+    <type name="Learn\Backend\Controller\Index\Index">
+        <plugin name="plugin_on_execute"
+                type="Learn\Backend\Plugin\PluginSolution"
+                sortOrder="10" disabled="true"/>
+        <plugin name="plugin_second_on_execute"
+                type="Learn\Backend\Plugin\PluginSolutionSecond"
+                sortOrder="20" disabled="true"/>
+        <plugin name="plugin_three_on_execute"
+                type="Learn\Backend\Plugin\PluginSolutionThree"
+                sortOrder="5" disabled="true"/>
+        <arguments>
+            <argument name="heavyService" xsi:type="object">Learn\Backend\Model\HeavyService\Proxy</argument>
+        </arguments>
+    </type>
+
+    <type name="Learn\Backend\Model\Boat">
+        <arguments>
+            <argument name="color" xsi:type="object">virtualTypeBlackColor</argument>
+            <argument name="type" xsi:type="object">Learn\Backend\Model\BasicType</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="virtualTypeBlackColor" type="Learn\Backend\Model\BlackColor">
+        <arguments>
+            <argument name="brightness" xsi:type="object">Learn\Backend\Model\High</argument>
+        </arguments>
+    </virtualType>
+</config>

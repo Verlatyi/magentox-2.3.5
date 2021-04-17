@@ -1,0 +1,78 @@
+
+<div>Start my twelve div</div>
+<div>-------------------</div>
+<!--function-->
+<div id="one" class="one"></div> <!--text/x-magento-init WITH selector-->
+<div id="two" class="two" data-mage-init='{"jsfunction": { }}'></div> <!--DATA-MAGE-INIT-->
+<div id="three" class="three"></div> <!--text/x-magento-init WITHOUT selector-->
+<div id="four" class="four"></div> <!--text/javascript-->
+
+<!--Widget-->
+<div id="five" class="five"></div> <!--text/x-magento-init WITH selector-->
+<div id="six" class="six" data-mage-init='{"jswidget":{ }}'></div> <!--DATA-MAGE-INIT-->
+<div id="seven" class="seven"></div> <!--text/x-magento-init WITHOUT selector-->
+<div id="eight" class="eight"></div> <!--text/javascript-->
+
+<!--Object-->
+<div id="nine" class="nine"></div> <!--text/x-magento-init WITH selector-->
+<div id="ten" class="ten" data-mage-init='{ "jsobject": { } }'></div> <!--DATA-MAGE-INIT-->
+<div id="eleven" class="eleven"></div> <!--text/x-magento-init WITHOUT selector-->
+<div id="twelve" class="twelve"></div> <!--text/javascript-->
+
+<div>-------------------</div>
+<div>End my twelve div</div>
+
+<!-- "text/x-magento-init" - "selector" -->
+<script type="text/x-magento-init">
+    {
+        "#one":{
+            "jsfunction":{ }
+        },
+        "#five":{
+            "jswidget": { }
+        },
+        "#nine":{
+            "jsobject": { }
+        }
+    }
+</script>
+
+<!-- "text/x-magento-init" - "*" -->
+<script type="text/x-magento-init">
+    {
+        "*":{
+            "jsfunction":{
+                "id" : "#three"
+            },
+            "jswidget":{
+                 "id" : "#seven"
+            },
+            "jsobject":{
+                "id" : "#eleven"
+             }
+        }
+    }
+</script>
+
+
+<!--text/javascript-->
+<script type="text/javascript">
+        require(['jsfunction'], function(jsfunction) {
+            jsfunction({
+                "id" : "#four"
+            })
+        })
+        require(['jswidget'], function(jswidget) {
+            jswidget({
+                "id" : "#eight"
+            })
+            //$('#eight').jswidget();
+        })
+        require(['jsobject'], function(jsobject) {
+            jsobject.jsobject({ "id" : "#twelve"})
+        })
+        require(['counter'], function (counter) {
+            counter.resaultCount()
+        })
+</script>
+

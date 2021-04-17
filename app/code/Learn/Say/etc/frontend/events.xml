@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="learn_say_display_text">
+        <observer name="ls_display_text" instance="Learn\Say\Observer\ChangeDisplayText" />
+    </event>
+</config>

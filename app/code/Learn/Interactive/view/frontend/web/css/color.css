@@ -1,0 +1,152 @@
+:root {
+    --main-bg-color: gray;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul.colors {
+    padding-left: 20px;
+}
+
+ul.colors li {
+    display: flex;
+    margin-top: 20px;
+}
+
+.form-add-container {
+    margin: 5px 20px 15px 20px;
+    display: flex;
+}
+
+.form-add-container .input-color {
+    max-width: 75%;
+    border-radius: 2px;
+}
+
+.form-add-container .actions-toolbar {
+    margin-left: 10px;
+}
+
+ul.colors .delete {
+    display: flex;
+    justify-content: end;
+}
+
+ul.colors .delete:hover {
+    cursor: pointer;
+}
+
+
+ul.colors li {
+    margin: 0;
+    padding: 12px 20px 12px 25px;
+    display: block;
+    font-size: 1.3rem;
+    color: #006400;
+    padding-left: 5px;
+    position: relative;
+    max-width: 75%;
+}
+
+ul.colors li.gray {
+    background-color: var(--main-bg-color);
+}
+
+ul.colors li.pink {
+    background-color: pink;
+}
+
+ul.colors li.red {
+    background-color: red;
+}
+
+ul.colors li.green {
+    background-color: green;
+}
+
+ul.colors li.yellow {
+    background-color: yellow;
+}
+
+ul.colors li.blue {
+    background-color: blue;
+}
+
+ul.colors li.brown {
+    background-color: brown;
+}
+
+ul.colors li.black {
+    background-color: black;
+}
+
+ul.colors li.brown {
+    background-color: brown;
+}
+
+ul.colors li.orange {
+    background-color: orange;
+}
+
+ul.info-colors {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+ul.info-colors li p {
+    height: 20px;
+    width: 35px;
+}
+
+ul.info-colors li p.gray {
+    background-color: var(--main-bg-color);
+}
+
+ul.info-colors li p.pink {
+    background-color: pink;
+}
+
+ul.info-colors li p.red {
+    background-color: red;
+}
+
+ul.info-colors li p.green {
+    background-color: green;
+}
+
+ul.info-colors li p.yellow {
+    background-color: yellow;
+}
+
+ul.info-colors li p.blue {
+    background-color: blue;
+}
+
+ul.info-colors li p.brown {
+    background-color: brown;
+}
+
+ul.info-colors li p.black {
+    background-color: black;
+}
+
+ul.info-colors li p.brown {
+    background-color: brown;
+}
+
+ul.info-colors li p.orange {
+    background-color: orange;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.select-color {
+    max-width: 75%;
+    padding-left: 15px;
+}

@@ -1,0 +1,12 @@
+
+<div data-bind="scope: 'interactive'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout(); ?>
+        }
+    }
+</script>

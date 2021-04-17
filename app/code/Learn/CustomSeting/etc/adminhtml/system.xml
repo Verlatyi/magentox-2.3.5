@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="Custom_Seting" sortOrder="120" translate="label">
+            <label>Custom Admin</label>
+        </tab>
+        <section id="Firstsection" translate="label" sortOrder="100" showInWebsite="1" showInStore="1" showInDefault="1">
+            <label>First Section</label>
+            <tab>Custom_Seting</tab>
+            <resource>Learn_CustomSeting::parent</resource>
+            <group id="Firstgroup" showInWebsite="1" showInStore="1" showInDefault="1">
+                <label>First Group</label>
+                <field id="Firstfield" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label" type="text" sortOrder="100">
+                    <label>First Text Field</label>
+                </field>
+                <field id="Secondfield" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label" type="text" sortOrder="100">
+                    <label>Second Text Field</label>
+                </field>
+                <field id="Thirdfield" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label" type="select" sortOrder="100">
+                    <label>Select Field</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="Fourthfield" showInWebsite="1" showInStore="1" showInDefault="1"
+                       translate="label" type="multiselect" sortOrder="100">
+                    <label>Enable font-style</label>
+                    <source_model>Learn\CustomSeting\Model\AdminArray</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

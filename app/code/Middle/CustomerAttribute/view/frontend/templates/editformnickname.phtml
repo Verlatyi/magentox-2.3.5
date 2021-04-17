@@ -1,0 +1,13 @@
+<fieldset class="fieldset edit account">
+    <div class="field mobile">
+        <label for="nickname" class="label"><span><?php echo __('Your Secret Nickname') ?></span></label>
+        <div class="control">
+            <input type="text"
+                   name="nickname"
+                   id="nickname"
+                   value="<?php echo $block->getCustomer()->getCustomAttribute('nickname')->getValue() ?>"
+                   class="input-text"
+                   autocomplete="off">
+        </div>
+    </div>
+</fieldset>

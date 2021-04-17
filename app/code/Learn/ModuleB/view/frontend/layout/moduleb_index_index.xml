@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Learn_Interactive::css/color.css"/>
+    </head>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">MY MODULE B</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="notes.viewmodel" remove="true"/>
+        <referenceBlock name="learn.js.myjs" remove="true"/>
+        <referenceBlock name="lackytheme.text.default" remove="true"/>
+        <referenceBlock name="lackytheme.text2.default" remove="true"/>
+        <referenceBlock name="lackytheme.text3.default" remove="true"/>
+        <referenceBlock name="lackytheme.text4.default" remove="true"/>
+        <referenceBlock name="lackytheme.text5.default" remove="true"/>
+        <referenceBlock name="lackytheme.animation.default" remove="true"/>
+    </body>
+</page>

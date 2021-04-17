@@ -1,0 +1,21 @@
+<?php
+
+use Middle\Escape\Block\CustomEscape;
+
+/**
+ * @var CustomEscape $block
+ */
+
+echo $block->sayPage();
+echo '<br>';
+echo $block->escapeHtml($block->getLabel());
+echo '<br>';
+//echo $block->getScript();
+echo $block->escapeHtmlAttr($block->getScript());
+echo '<br>';
+echo $block->escapeCss($block->getScript());
+echo '<br>';
+echo $block->escapeJs($block->getScript());
+echo "<br>";
+?>
+<a href="<?= $block->getScript(); ?>">kaput</a>

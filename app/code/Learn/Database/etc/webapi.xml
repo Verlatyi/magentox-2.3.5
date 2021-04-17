@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <!--get all list-->
+    <route method="GET" url="/V1/learn/database">
+      <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="getLis"/>
+      <resources>
+          <resource ref="anonymous"/>
+      </resources>
+    </route>
+
+    <!--get for Id-->
+    <route method="GET" url="/V1/learn/database/iid/:id">
+        <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--save-->
+    <route method="POST" url="/V1/learn/database">
+        <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="saveLearnDatabase"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--update-->
+    <route method="PUT" url="/V1/learn/database/:id">
+        <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="saveLearnDatabase"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--delete-->
+    <route method="DELETE" url="/V1/learn/database/:id">
+        <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="saveLearnDatabase"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+
+    <!--Search Criteria-->
+    <route method="GET" url="/V1/learn/database/search">
+        <service class="Learn\Database\Api\LearnDatabaseRepositoryInterface" method="getSearchResultsList"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Learn_CustomSeting::task" title="Task" translate="title" module="Learn_CustomSeting" sortOrder="200" resource="Learn_CustomSeting::parent"/>
+        <add id="Learn_CustomSeting::quickly_task" title="Quickly Task" translate="title" module="Learn_CustomSeting" sortOrder="200" parent="Learn_CustomSeting::task" action="quickly/task/index" resource="Learn_CustomSeting::parent"/>
+    </menu>
+</config>

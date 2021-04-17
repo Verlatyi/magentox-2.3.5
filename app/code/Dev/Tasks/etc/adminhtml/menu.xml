@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Dev_Tasks::view" title="Task Developer" module="Dev_Tasks" sortOrder="10" resource="Dev_Tasks::view"/>
+        <add id="Dev_Tasks::grid" title="Manage Task Developer" module="Dev_Tasks" sortOrder="9" parent="Dev_Tasks::view" action="tasks/grid/index" resource="Dev_Tasks::view"/>
+    </menu>
+</config>

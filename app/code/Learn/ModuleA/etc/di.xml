@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd" >
+
+    <preference for="Learn\ModuleA\Api\BoatInterface"
+                type="Learn\ModuleA\Model\Boat" />
+
+    <preference for="Learn\ModuleB\Api\CarInterface"
+                type="Learn\ModuleA\Model\CarsModuleA"/>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+<!--        <referenceContainer name="header.container">-->
+<!--                <block class="Magento\Store\Block\Switcher" name="store_switcher" as="store_switcher" template="Magento_Store::switch/stores.phtml"/>-->
+<!--        </referenceContainer>-->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template" name="notes.viewmodel"
+                   template="FabricList_Notes::main_notes.phtml">
+                <arguments>
+                    <argument name="viewModel"
+                              xsi:type="object">FabricList\Notes\ViewModel\CmsPagesList</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

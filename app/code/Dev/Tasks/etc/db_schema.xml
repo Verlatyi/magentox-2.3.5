@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dev_tasks" resource="default" comment="Dev Tasks Table Db">
+
+        <column xsi:type="int" name="id" identity="true" nullable="false" comment="Task ID"/>
+
+        <column xsi:type="varchar" name="name"
+                length="255"
+                comment="Name Task" />
+
+        <column xsi:type="varchar" name="content"
+                length="255"
+                comment="Task content" />
+
+        <column xsi:type="date" name="created_date"
+                nullable="false"
+                comment="Task Created Date" />
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+    </table>
+</schema>

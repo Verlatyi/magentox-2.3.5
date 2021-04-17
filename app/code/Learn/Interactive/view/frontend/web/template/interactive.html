@@ -1,0 +1,68 @@
+
+<div class="info title">Available colors:</div>
+    <ul class="info-colors">
+        <li repeat="foreach: customColors, item: 'color'">
+            <p data-bind="
+                attr: {
+                    'data-color': color().color,
+                    class: color().color
+                },
+                click: clickIcoColor
+            " translate="color().color"></p>
+
+        </li>
+    </ul>
+
+    <div class="select-color">
+        <div class="title">Select color:</div>
+
+        <select data-bind="options: customColors,
+                       optionsCaption: 'Choose color',
+                       optionsText: 'color',
+                       value: selectedItem,
+                       click: selectColor"></select>
+    </div>
+
+    <div class="title">Input color:</div>
+    <div class="form-add-container">
+        <input type="text"
+               class="input-color"
+               id="input-color-id"
+               name="color"
+               data-bind="
+                   value: newColorLabel,
+                   event: {'keyup': addToClickEnter}"
+               placeholder="Add color"/>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="button"
+                        title="Add Color"
+                        class="action save primary"
+                        id="add-new-btn-color-id"
+                        data-bind="click: addColor">
+                    <span>Add Color</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ko if: ($data.colors) -->
+    <h3>COLORS LIST:</h3>
+    <ul class="colors">
+        <li class="li-label"  repeat="foreach: colors, item: 'color'">
+            <span class="label" translate="color().color"></span>
+            <a class="action delete" data-bind="
+                attr: {
+                    'data-id': color().color_id
+                },
+                click: deleteColor.bind($data, color().color_id)
+            ">Delete</a>
+        </li>
+    </ul>
+    <!-- /ko -->
+
+    <!-- ko if: (colors().length == 0) -->
+    <div class="message info empty">
+        <span>There are no colors. Add a new color.</span>
+    </div>
+    <!-- /ko -->

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Created By : Rohan Hapani
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="Rh_Blog::view" title="RH Blog" module="Rh_Blog" sortOrder="10" resource="Rh_Blog::view"/>
+        <add id="Rh_Blog::grid" title="Manage Blog Records" module="Rh_Blog" sortOrder="9" parent="Rh_Blog::view" action="blog/grid/index" resource="Rh_Blog::view"/>
+    </menu>
+</config>
