@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Hz_SampleForm::sampleform" title="Sample Custom Form" translate="title"
+             module="Hz_SampleForm" sortOrder="200" action="sampleform/index/index" resource="Hz_SampleForm::parent"/>
+    </menu>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Send_Email::sendemail" title="Send Email" translate="title"
+             module="Send_Email" sortOrder="200" action="sendemail/email/index" resource="Send_Email::parent"/>
+    </menu>
+</config>

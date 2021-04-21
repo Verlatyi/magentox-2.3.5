@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">sampleform_form.sampleform_form_data_source</item>
+            <item name="deps" xsi:type="string">sampleform_form.sampleform_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Sample Form</item>
+        <item name="layout" xsi:type="array">
+            <item name="type" xsi:type="string">tabs</item>
+        </item>
+    </argument>
+
+    <dataSource name="sampleform_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Hz\SampleForm\Model\DataProvider</argument>
+            <argument name="name" xsi:type="string">sampleform_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="sample_fieldset">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Sample Fieldset</item>
+            </item>
+        </argument>
+
+        <!-- This field represents form id and is hidden -->
+        <field name="entity_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sampleform</item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Some text</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sampleform</item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- This field has data type 'text'
+        and override standard 'input' form element's tempate and constructor by custom ones -->
+        <!--<field name="color">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    &lt;!&ndash;component constructor&ndash;&gt;
+                    <item name="component" xsi:type="string">Hz_SampleForm/js/form/element/color-select</item>
+                    &lt;!&ndash;main template for form field that renders elementTmpl as a child template&ndash;&gt;
+                    <item name="template" xsi:type="string">ui/form/field</item>
+                    &lt;!&ndash;customized form element template that will show colors&ndash;&gt;
+                    <item name="elementTmpl" xsi:type="string">Hz_SampleForm/form/element/color-select</item>
+                    <item name="label" xsi:type="string">Autumn colors</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">sampleform</item>
+                </item>
+            </argument>
+        </field>-->
+
+        <field name="textarea_example">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="cols" xsi:type="number">15</item>
+                    <item name="rows" xsi:type="number">5</item>
+                    <item name="label" translate="true" xsi:type="string">Textarea Field Example</item>
+                    <item name="dataType" translate="true" xsi:type="string">text</item>
+                </item>
+            </argument>
+        </field>
+
+        <listing>
+            <button name="my_new_button">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="actions" xsi:type="array">
+                            <item name="0" xsi:type="array">
+                                <item name="targetName" xsi:type="string">TARGET_NAME</item>
+                                <item name="actionName" xsi:type="string">ACTION_NAME</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+                <settings>
+                    <displayAsLink>false</displayAsLink>
+                    <title><![CDATA[Test Button]]></title>
+                </settings>
+            </button>
+        </listing>
+    </fieldset>
+</form>
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+    &lt;!&ndash;
+    /**
+     * Copyright © 2016 Magento. All rights reserved.
+     * See COPYING.txt for license details.
+     */
+    &ndash;&gt;
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/Ui/etc/ui_configuration.xsd">
+<argument name="data" xsi:type="array">
+    <item name="js_config" xsi:type="array">
+        <item name="provider" xsi:type="string">sampleform_form.sampleform_form_data_source</item>
+        <item name="deps" xsi:type="string">sampleform_form.sampleform_form_data_source</item>
+    </item>
+    <item name="label" xsi:type="string" translate="true">Sample Form</item>
+    <item name="layout" xsi:type="array">
+        <item name="type" xsi:type="string">tabs</item>
+    </item>
+</argument>
+
+<dataSource name="sampleform_form_data_source">
+    <argument name="dataProvider" xsi:type="configurableObject">
+        <argument name="class" xsi:type="string">Hz\SampleForm\Model\DataProvider</argument>
+        <argument name="name" xsi:type="string">sampleform_form_data_source</argument>
+        <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+        <argument name="requestFieldName" xsi:type="string">id</argument>
+    </argument>
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+        </item>
+    </argument>
+</dataSource>
+
+<fieldset name="sample_fieldset">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="label" xsi:type="string" translate="true">Sample Fieldset</item>
+        </item>
+    </argument>
+
+    &lt;!&ndash; This field has data type 'text' and standard 'input' form element and looks like input &ndash;&gt;
+    <field name="title">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string">Some text</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">sampleform</item>
+            </item>
+        </argument>
+    </field>
+
+    &lt;!&ndash; This field has data type 'text'
+    and override standard 'input' form element's tempate and constructor by custom ones &ndash;&gt;
+    <field name="color">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                &lt;!&ndash;component constructor&ndash;&gt;
+                <item name="component" xsi:type="string">Hz_SampleForm/js/form/element/color-select</item>
+                &lt;!&ndash;main template for form field that renders elementTmpl as a child template&ndash;&gt;
+                <item name="template" xsi:type="string">ui/form/field</item>
+                &lt;!&ndash;customized form element template that will show colors&ndash;&gt;
+                <item name="elementTmpl" xsi:type="string">Hz_SampleForm/form/element/color-select</item>
+                <item name="label" xsi:type="string">Autumn colors</item>
+                <item name="visible" xsi:type="boolean">true</item>
+                <item name="dataType" xsi:type="string">text</item>
+                <item name="formElement" xsi:type="string">input</item>
+                <item name="source" xsi:type="string">sampleform</item>
+            </item>
+        </argument>
+    </field>
+    <field name="textarea_example">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="formElement" xsi:type="string">textarea</item>
+                <item name="cols" xsi:type="number">15</item>
+                <item name="rows" xsi:type="number">5</item>
+                <item name="label" translate="true" xsi:type="string">Textarea Field Example</item>
+                <item name="dataType" translate="true" xsi:type="string">text</item>
+            </item>
+        </argument>
+    </field>
+
+    <listing>
+        <button name="my_new_button">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="actions" xsi:type="array">
+                        &lt;!&ndash; Add your button's actions here &ndash;&gt;
+                        <item name="0" xsi:type="array">
+                            <item name="targetName" xsi:type="string">TARGET_NAME</item>
+                            <item name="actionName" xsi:type="string">ACTION_NAME</item>
+                        </item>
+                    </item>
+                </item>
+            </argument>
+            <settings>
+                <displayAsLink>false</displayAsLink>
+                <title><![CDATA[Test Button]]></title>
+            </settings>
+        </button>
+    </listing>
+</fieldset>
+</form>
+-->
