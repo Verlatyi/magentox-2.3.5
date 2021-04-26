@@ -1,0 +1,16 @@
+{{inlinecss file="Middle_SendEmail::css/source/_extend.less"}}
+<!--@subject {{trans "Lucky Letter For You"}}  @-->
+<header style="background: {{var choosed_color}}; opacity: 50%;
+font-family: Arial, Helvetica, sans-serif; font-size: 25px; margin: auto;">
+    <h1>Letter</h1>
+</header>
+<body style="text-align: center;">
+    <p><em>{{var administrator_name}}</em></p>
+    <p><b>{{var choosed_color}}</b></p>
+    <br>
+    <span class="description">{{var some_description}}</span>
+    <!--<img src="{{view url='https://habrastorage.org/getpro/habr/post_images/935/ed8/cd2/935ed8cd2ab242851894dd6509bff19b.png'}}" height="30" width="30" alt="{{trans 'robot'}}" />-->
+    <img src='https://habrastorage.org/getpro/habr/post_images/935/ed8/cd2/935ed8cd2ab242851894dd6509bff19b.png'>
+    <p>{{var url_image}}</p>
+    <img src='{{var url_image}}'>
+</body>

@@ -285,6 +285,7 @@ return [
         'MagePal_GmailSmtpApp' => 1,
         'Middle_CustomerAttribute' => 1,
         'Middle_Escape' => 1,
+        'Middle_SendEmail' => 1,
         'PHPCuong_SalesOrder' => 1,
         'PHPCuong_TransactionalEmail' => 1,
         'Rh_Blog' => 1,
