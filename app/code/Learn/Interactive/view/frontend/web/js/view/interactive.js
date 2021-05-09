@@ -3,8 +3,9 @@ define([
     'jquery',
     'Magento_Ui/js/modal/confirm',
     'Learn_Interactive/js/operation/color',
-    'Learn_Interactive/js/check/check'
-], function (Component, $, confirmModal, colorOperation, colorCheck) {
+    'Learn_Interactive/js/check/check',
+    'mage/translate'
+], function (Component, $, confirmModal, colorOperation, colorCheck, $t) {
     'use strict';
 
     return Component.extend({
@@ -16,7 +17,7 @@ define([
             red: 'red',
             colors: [],
             customColors: [
-                {color: "red"},
+                {color: $t('red')},
                 {color: "blue"},
                 {color: "yellow"},
                 {color: "green"},
